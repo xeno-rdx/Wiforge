@@ -1,0 +1,5 @@
+# Only needed for:
+#   -d / --decrypt and the decrypt step of --auto  -> AES-CCM, AES key-unwrap, AES-CMAC
+# Everything else in Wiforge (analyze, extract, inspect, sae, enterprise
+# detection, merge, convert, verify) runs on the Python 3 stdlib alone.
+cryptography>=42.0.0
