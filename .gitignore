@@ -1,0 +1,30 @@
+# Captures and anything derived from them — never commit real traffic/hashes
+*.cap
+*.pcap
+*.pcapng
+*.22000
+*.16800
+*.hccapx
+*.5500
+*.4800
+*.sae
+hashes/
+out/
+output/
+*-decrypted.pcap
+report.json
+report.csv
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+*.egg-info/
+
+# OS/editor cruft
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
