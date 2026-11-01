@@ -4,11 +4,16 @@
 
 ### WPA/WPA2/WPA3 Capture Analyzer · Hash Extractor · Decryptor · Enterprise Credential Extraction
 
+> ⚠️ **For authorized security research and education only** — penetration
+> testing engagements, red team exercises, and CTF/lab environments you
+> have explicit permission to test. See [Disclaimer](#disclaimer).
+
 </div>
 
 <img src="assets/divider.svg" alt="" width="100%">
 
-**Wiforge** is a single-file Python CLI for working with 802.11 (Wi-Fi) packet
+**Wiforge** is a single-file Python CLI, built for **security researchers,
+penetration testers, and CTF players**, for working with 802.11 (Wi-Fi) packet
 captures end to end: it finds WPA/WPA2/WPA3 networks and handshakes in a
 `.cap`/`.pcap`/`.pcapng` file, extracts crackable hashes for them, and —
 once you have a password — decrypts the actual traffic and pulls out a
@@ -103,11 +108,21 @@ standard library alone.
 
 ## Disclaimer
 
-Wiforge is built for authorized penetration testing, red team
-engagements, and CTF/lab environments you have explicit permission to
-test. Using it against networks or traffic you do not own or have
-written authorization to assess is illegal in most jurisdictions.
-You're responsible for how you use it.
+> **Wiforge is a dual-use security research tool, published for defensive
+> and educational purposes.** It is intended strictly for:
+> - Authorized penetration testing and red team engagements performed
+>   with explicit written permission from the network/traffic owner
+> - CTF competitions and personal lab/test environments you control
+> - Security education and research into the WPA/WPA2/WPA3 and 802.1X
+>   protocols
+>
+> Wiforge does **not** capture traffic, perform deauthentication, brute
+> force passwords, or attack a network in any way — it only processes
+> `.cap`/`.pcap`/`.pcapng` files you already have, after the fact.
+> Using it against networks or traffic you do not own or do not have
+> written authorization to assess is illegal in most jurisdictions.
+> **You are solely responsible for complying with applicable laws and
+> for how you use this software.**
 
 <img src="assets/divider.svg" alt="" width="100%">
 
