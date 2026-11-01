@@ -1,5 +1,6 @@
+#!/usr/bin/env python3
 """
-Wiforge v3.0.0 — WPA/WPA2/WPA3 Capture Analyzer, Hash Extractor & Decryptor
+Wiforge v4.1.0 — WPA/WPA2/WPA3 Capture Analyzer, Hash Extractor & Decryptor
 
 CLI:
     Wiforge -a  <capture> [--full|--stats|--packets|--payloads] [-o f.json]
@@ -50,7 +51,7 @@ import threading
 from collections import defaultdict
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
-VERSION = "3.0.0"
+VERSION = "4.1.0"
 PROG = "Wiforge"
 
 # ============================================================================

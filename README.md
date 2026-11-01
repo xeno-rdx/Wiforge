@@ -29,27 +29,6 @@ post-processing and analysis tool for traffic you already have.
 
 ## Install
 
-### One-line install (Debian/Kali, Arch/Manjaro)
-
-```
-curl -fsSL https://raw.githubusercontent.com/MehrzadBarekatain/Wiforge/main/install.sh | bash
-```
-
-This installs Wiforge into `~/.local/share/wiforge` with its own
-virtualenv (your system Python is never touched) and puts a `wiforge`
-command on your `PATH` via `~/.local/bin`, so you can run `wiforge -h`
-from anywhere afterwards. It auto-installs whatever's missing —
-`python3`, `python3-venv`/`python-pip`, `git`, `curl` — via `apt` or
-`pacman`, whichever it detects, and installs `cryptography` into its own
-venv so it works even on newer Debian/Kali where `pip install` is
-blocked system-wide (PEP 668).
-
-To update later, just run the same command again.
-
-To uninstall: `rm -rf ~/.local/share/wiforge ~/.local/bin/wiforge`.
-
-### Manual install
-
 ```
 git clone https://github.com/MehrzadBarekatain/Wiforge.git
 cd wiforge
@@ -226,8 +205,7 @@ capture/hash file is well-formed.
 ## Command Reference
 
 ```bash
-$ wiforge -h          # if installed via install.sh
-$ python3 wiforge.py -h   # manual install
+$ python3 wiforge.py -h
 
 USAGE
   Wiforge -a    <capture>                        Analyze capture (default)
