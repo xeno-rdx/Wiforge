@@ -45,6 +45,43 @@ pip install -r requirements.txt
 Requires Python 3.8+. Everything except `-d`/`--auto -p` runs on the
 standard library alone.
 
+### Run `wiforge` from anywhere
+
+To call it as a plain `wiforge` command from any directory, any time,
+instead of `python3 /path/to/wiforge.py`, set up a dedicated virtualenv
+and a small launcher — this also sidesteps `pip install` being blocked
+system-wide on newer Debian/Kali (PEP 668), and never touches your
+system Python:
+
+```
+cd wiforge        # inside the cloned repo
+python3 -m venv ~/.local/share/wiforge-venv
+~/.local/share/wiforge-venv/bin/pip install -r requirements.txt
+
+mkdir -p ~/.local/bin
+cat > ~/.local/bin/wiforge << EOF
+#!/usr/bin/env bash
+exec ~/.local/share/wiforge-venv/bin/python3 "$(pwd)/wiforge.py" "\$@"
+EOF
+chmod +x ~/.local/bin/wiforge
+```
+
+If `wiforge -h` doesn't work yet, `~/.local/bin` probably isn't on your
+`PATH` — add it and reload your shell:
+
+```
+echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
+source ~/.bashrc
+```
+
+(use `~/.zshrc` instead if you're on zsh). After this, `wiforge -a
+capture.cap`, `wiforge -d ...`, etc. work from anywhere, and all its
+flags work exactly as shown below.
+
+To update later: `cd` back into the cloned repo and `git pull` — the
+`wiforge` launcher always points at that same file, so no further setup
+is needed.
+
 <img src="assets/divider.svg" alt="" width="100%">
 
 ## Features
